@@ -15,6 +15,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testCompile 'org.junit.jupiter:junit-jupiter-params:5.7.0'
     compile 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    // https://mvnrepository.com/artifact/org.kohsuke/github-api
+    implementation group: 'org.kohsuke', name: 'github-api', version: '1.132'
+
 }
 
 test {
