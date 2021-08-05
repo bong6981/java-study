@@ -1,10 +1,13 @@
 package bongf;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
-import bongf.BongLinkedList.*;
-
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 class BongLinkedListTest {
     BongLinkedList linkedList;
@@ -77,7 +80,7 @@ class BongLinkedListTest {
             void addToInsert() {
                 ListNode nodeToInsert = new ListNode(3);
                 linkedList.add(head, nodeToInsert, 1);
-                Assertions.assertAll(
+                assertAll(
                         () -> assertThat(head.getNext()).isEqualTo(nodeToInsert),
                         () -> assertThat(nodeToInsert.getNext()).isEqualTo(addedNode1)
                 );
@@ -94,7 +97,7 @@ class BongLinkedListTest {
             @DisplayName("다른 node 사이의 node를 제거할 수 있어야한다")
             void removeNode() {
                 linkedList.remove(head, 1);
-                Assertions.assertAll(
+                assertAll(
                         () -> assertThat(head.getNext()).isEqualTo(addedNode2),
                         () -> assertThat(addedNode1.getNext()).isNull()
                 );
@@ -111,7 +114,7 @@ class BongLinkedListTest {
             @Test
             @DisplayName("node가 기존에 있는 node인지 확인 할 수 있어야한다")
             void checkNode() {
-                Assertions.assertAll(
+                assertAll(
                         () -> assertThat(linkedList.contains(head, head)).isTrue(),
                         () -> assertThat(linkedList.contains(head, addedNode1)).isTrue(),
                         () -> assertThat(linkedList.contains(head, addedNode2)).isTrue(),

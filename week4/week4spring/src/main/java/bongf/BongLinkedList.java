@@ -75,23 +75,6 @@ public class BongLinkedList {
         if (position < 0)
             throw new IndexOutOfBoundsException();
     }
-
-    static class ListNode {
-        private int data;
-        private ListNode next;
-
-        ListNode(int data) {
-            this.data = data;
-        }
-
-        ListNode getNext() {
-            return this.next;
-        }
-
-        private void setNext(ListNode next) {
-            this.next = next;
-        }
-    }
 }
 
 
