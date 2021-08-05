@@ -3,11 +3,11 @@ package bongf;
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
-public class BongStack {
+public class ArrayStack {
     private int[] stackArray;
     private int size;
 
-    public BongStack() {
+    public ArrayStack() {
     }
 
     public void push(int data) {

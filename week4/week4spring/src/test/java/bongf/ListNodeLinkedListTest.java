@@ -9,13 +9,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-class BongLinkedListTest {
-    BongLinkedList linkedList;
+class ListNodeLinkedListTest {
+    ListNodeLinkedList linkedList;
     ListNode head;
 
     @BeforeEach
     void setUp() {
-        linkedList = new BongLinkedList();
+        linkedList = new ListNodeLinkedList();
     }
 
     @Test

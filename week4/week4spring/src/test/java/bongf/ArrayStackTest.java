@@ -12,21 +12,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-class BongStackTest {
-    BongStack bongStack;
+class ArrayStackTest {
+    ArrayStack arrayStack;
 
     @BeforeEach
     void set() {
-        bongStack = new BongStack();
+        arrayStack = new ArrayStack();
     }
 
     @Test
     @DisplayName("빈 스택에 push를 할 수 있어야 한다")
     void pushIntoEmptyStack() {
-        bongStack.push(1);
+        arrayStack.push(1);
         assertAll(
-                () -> assertThat(bongStack.getStackArray().length).isEqualTo(1),
-                () -> assertThat(bongStack.getStackArray()[0]).isEqualTo(1)
+                () -> assertThat(arrayStack.getStackArray().length).isEqualTo(1),
+                () -> assertThat(arrayStack.getStackArray()[0]).isEqualTo(1)
         );
     }
 
@@ -34,7 +34,7 @@ class BongStackTest {
     @DisplayName("빈 스택에 pop하면 예외가 발생해야 한다")
     void popFromEmptyStack() {
         assertThatThrownBy(() -> {
-            bongStack.pop();
+            arrayStack.pop();
         }).isInstanceOf(EmptyStackException.class);
     }
 
@@ -44,27 +44,27 @@ class BongStackTest {
 
         @BeforeEach
         void pushElements() {
-            bongStack.push(0);
-            bongStack.push(1);
+            arrayStack.push(0);
+            arrayStack.push(1);
         }
 
         @Test
         @DisplayName("이미 데이터가 있는 스택에 push를 할 수 있어야 한다.")
         void pushIntoStack() {
-            bongStack.push(2);
+            arrayStack.push(2);
             assertAll(
-                    () -> assertThat(Arrays.toString(bongStack.getStackArray())).isEqualTo("[0, 1, 2]"),
-                    () -> assertThat(bongStack.getStackArray().length).isEqualTo(3)
+                    () -> assertThat(Arrays.toString(arrayStack.getStackArray())).isEqualTo("[0, 1, 2]"),
+                    () -> assertThat(arrayStack.getStackArray().length).isEqualTo(3)
             );
         }
 
         @Test
         @DisplayName("스택에 pop하면 마지막 요소가 제거되어야 한다.")
         void popFromStack() {
-            bongStack.pop();
+            arrayStack.pop();
             assertAll(
-                    () -> assertThat(Arrays.toString(bongStack.getStackArray())).isEqualTo("[0]"),
-                    () -> assertThat(bongStack.getStackArray().length).isEqualTo(1)
+                    () -> assertThat(Arrays.toString(arrayStack.getStackArray())).isEqualTo("[0]"),
+                    () -> assertThat(arrayStack.getStackArray().length).isEqualTo(1)
             );
         }
     }

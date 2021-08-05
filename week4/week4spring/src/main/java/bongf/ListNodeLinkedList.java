@@ -1,8 +1,8 @@
 package bongf;
 
-public class BongLinkedList {
+public class ListNodeLinkedList {
 
-    public BongLinkedList() {
+    public ListNodeLinkedList() {
     }
 
     public void add(ListNode head, ListNode nodeToAdd, int position) {
