@@ -10,7 +10,7 @@ public class ArrayStack {
     public ArrayStack() {
     }
 
-    public void push(int data) {
+    public int push(int data) {
         if (size == 0) {
             stackArray = new int[]{data};
         } else {
@@ -18,14 +18,17 @@ public class ArrayStack {
             stackArray[size] = data;
         }
         size++;
+        return data;
     }
 
-    public void pop() {
+    public int pop() {
         if (size == 0) {
             throw new EmptyStackException();
         }
+        int num = stackArray[size-1];
         stackArray = Arrays.copyOfRange(stackArray, 0, size - 1);
         size--;
+        return num;
     }
 
     public int[] getStackArray() {

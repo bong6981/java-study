@@ -49,7 +49,7 @@ class ArrayStackTest {
         }
 
         @Test
-        @DisplayName("이미 데이터가 있는 스택에 push를 할 수 있어야 한다.")
+        @DisplayName("스택에 push를 할 수 있어야 한다.")
         void pushIntoStack() {
             arrayStack.push(2);
             assertAll(
@@ -61,8 +61,9 @@ class ArrayStackTest {
         @Test
         @DisplayName("스택에 pop하면 마지막 요소가 제거되어야 한다.")
         void popFromStack() {
-            arrayStack.pop();
+            int num = arrayStack.pop();
             assertAll(
+                    () -> assertThat(num).isEqualTo(1),
                     () -> assertThat(Arrays.toString(arrayStack.getStackArray())).isEqualTo("[0]"),
                     () -> assertThat(arrayStack.getStackArray().length).isEqualTo(1)
             );
