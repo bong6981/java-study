@@ -12,6 +12,10 @@ public class ListNode {
             return this.next;
         }
 
+        int getData() {
+            return this.data;
+        }
+
         void setNext(ListNode next) {
             this.next = next;
         }

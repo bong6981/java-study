@@ -60,7 +60,7 @@ class BongStackTest {
 
         @Test
         @DisplayName("스택에 pop하면 마지막 요소가 제거되어야 한다.")
-        void popFromEmptyStack() {
+        void popFromStack() {
             bongStack.pop();
             assertAll(
                     () -> assertThat(Arrays.toString(bongStack.getStackArray())).isEqualTo("[0]"),
