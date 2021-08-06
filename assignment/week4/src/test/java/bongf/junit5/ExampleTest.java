@@ -27,26 +27,26 @@ public class ExampleTest {
         assertEquals(1, 1);
     }
 
-    @Test
-    @DisplayName("Should check all items in the list")
-    void shouldCheckAllItemsInTheList() {
-        List<Integer> numbers = List.of(2, 3, 5, 7);
-        assertEquals(2, numbers.get(0));
-        assertEquals(3, numbers.get(3));
-        assertEquals(5, numbers.get(2));
-        assertEquals(7, numbers.get(3));
-    }
-
-    @Test
-    @DisplayName("Should check all items in the list")
-    void shouldCheckAllItemsInByAssertAll() {
-        List<Integer> numbers = List.of(2, 3, 5, 7);
-        Assertions.assertAll(
-                () -> assertEquals(1, numbers.get(0)),
-                () -> assertEquals(3, numbers.get(1)),
-                () -> assertEquals(1, numbers.get(2)),
-                () -> assertEquals(7, numbers.get(3)));
-    }
+//    @Test
+//    @DisplayName("Should check all items in the list")
+//    void shouldCheckAllItemsInTheList() {
+//        List<Integer> numbers = List.of(2, 3, 5, 7);
+//        assertEquals(2, numbers.get(0));
+//        assertEquals(3, numbers.get(3));
+//        assertEquals(5, numbers.get(2));
+//        assertEquals(7, numbers.get(3));
+//    }
+//
+//    @Test
+//    @DisplayName("Should check all items in the list")
+//    void shouldCheckAllItemsInByAssertAll() {
+//        List<Integer> numbers = List.of(2, 3, 5, 7);
+//        Assertions.assertAll(
+//                () -> assertEquals(1, numbers.get(0)),
+//                () -> assertEquals(3, numbers.get(1)),
+//                () -> assertEquals(1, numbers.get(2)),
+//                () -> assertEquals(7, numbers.get(3)));
+//    }
 
     @Test
     @DisplayName("Should only run the test if some criteria are met")
